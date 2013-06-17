@@ -1,0 +1,43 @@
+Order Allow,Deny 
+#разрешаем заходить на сервер всем 
+Allow from all
+
+AddDefaultCharset utf-8
+Options -Indexes +FollowSymlinks
+
+# Устанавливаем индексный файл
+DirectoryIndex index.php
+
+#включаем кодировку
+DefaultLanguage ru
+php_value default_charset "utf8"
+
+<Files ~ "\.(php|phtml|php4|php5)">
+    Order Allow,Deny
+	Deny from all
+</Files>
+
+<Files "index.php">
+    Order Deny,Allow
+    Allow from all
+</Files>
+
+#различные правила преобразования ссылок
+<IfModule mod_rewrite.c>
+	# Включение преобразования ссылок
+	RewriteEngine on
+
+	RewriteBase /
+
+	#если не файл и не директория, то
+	RewriteCond %{REQUEST_FILENAME} !-f
+	
+	#передаём управление индексному файлу
+	RewriteRule ^.*$             /index.php [L]
+	
+	RewriteRule ^.+/index\.php$ - [F]
+</IfModule>
+
+#не валидные ссылки
+#ErrorDocument 404 /index.php/404
+#ErrorDocument 403 /index.php/403

@@ -1,0 +1,19 @@
+<?php
+    if ($V->user) {
+        $user = $V->user;
+        echo 'Привет, '.$user['lastname'].' '.$user['firstname'].'!';
+    } else {
+        ?>
+        Авторизоваться через:<br>
+        <div id="<?php echo $V->ID ?>">
+            <a id="<?php echo $V->ID ?>-fb" href="#">Facebook</a>
+        </div>
+        <script>
+            Sky.create('sky.module.user.Auth', {
+                containerId: '<?php echo $V->ID ?>',
+                fb: <?php echo json_encode($V->FB) ?>
+            });
+        </script>
+        <?php
+    }
+?>

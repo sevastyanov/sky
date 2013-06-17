@@ -1,0 +1,29 @@
+<?php
+
+$itemsCount = count($V->items);
+
+for ($i = 0; $i < $itemsCount; $i++):
+
+    $item = &$V->items[$i];
+
+    if ($i !== 0) {
+        //echo '<hr>';
+    }
+?>
+
+    <div class="sky-news-list-item">
+        <div class="sky-news-list-item-title">
+            <div class="sky-news-list-item-date"><?php echo $item['created']; ?></div>
+            <a href="<?php echo $item['link']; ?>"><?php echo $item['name']; ?></a>
+        </div>
+        <div class="sky-news-list-item-description">
+            <?php echo $V->tinyMceText($item['description_short']); ?>
+        </div>
+
+    </div>
+
+<?php
+
+endfor;
+
+?>

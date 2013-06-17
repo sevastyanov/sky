@@ -1,0 +1,200 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    background-color: #e4e4e4;
+    background: #e4e4e4 url(/themes/standart/images/back.jpg) center top no-repeat;
+    overflow-y: scroll;
+    font-family: Arial;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+.sky-clear {
+    clear: both;
+}
+
+.sky-tinymce-content ul {
+    list-style: circle;
+    margin-left: 35px;
+}
+
+.sky-tinymce-content p {
+    margin: 10px 0;
+}
+.sky-body {
+    width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.sky-body-header {
+    height: 100px;
+    background-color: #b4b4b4;
+}
+
+.sky-body-header-logo {
+    float: left;
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px auto;
+}
+
+.sky-body-header-right {
+    float: right;
+    height: 80px;
+    padding: 10px;
+}
+.sky-body-content {
+    padding: 10px;
+    min-height: 800px;
+}
+.sky-body-footer {
+    height: 50px;
+    background-color: #949494;
+    padding: 10px;
+}
+
+.sky-body-footer-copyright {
+    float: right;
+    line-height: 50px;
+}
+.sky-menu ul {
+    background-color: #e4e4e4;
+}
+
+.sky-menu li {
+    list-style: none;
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+}
+
+.sky-menu li ul {
+    display: none;
+}
+
+.sky-menu li:hover ul {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.sky-menu-item-clear {
+    height: 0 !important;
+}
+
+.sky-menu > .sky-menu-horizontal > ul {
+    background-color: #a4a4a4;
+}
+
+.sky-menu > .sky-menu-horizontal a,
+.sky-menu > .sky-menu-horizontal a:visited,
+.sky-menu > .sky-menu-horizontal a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sky-menu-horizontal > ul > li {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.sky-menu-horizontal > ul > li:hover {
+    background-color: #b0b0b0;
+}
+
+.sky-menu-horizontal li.sky-menu-item-clear {
+    float: none;
+    clear: left;
+}
+
+.sky-menu > .sky-menu-horizontal li {
+    height: 35px;
+    line-height: 35px;
+}
+.sky-news-list-item {
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+}
+
+.sky-news-list-item-title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px dotted #a4a4a4;
+}
+
+.sky-news-list-item-title a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.sky-news-list-item-title a:hover {
+    text-decoration: underline;
+}
+
+.sky-news-list-item-date {
+    float: right;
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #a4a4a4;
+    line-height: 18px;
+}

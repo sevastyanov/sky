@@ -1,0 +1,21 @@
+<TITLE><?php echo $V->TITLE; ?></TITLE>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+<BASE HREF="<?php echo $V->BASE_HREF ?>" target="_self">
+<META NAME="description" CONTENT="<?php echo $V->DESCRIPTION ?>">
+<META NAME="keywords" CONTENT="<?php echo $V->KEYWORDS ?>">
+<STYLE TYPE="text/css">
+    body {
+        background-color: #eeeeee;
+    }
+
+    body > .x-box-inner {
+        background-color: white;
+    }
+</STYLE>
+<?php 
+	FOREACH ($V->STYLESHEETS AS $STYLESHEET => $NULL) {
+		echo '<LINK REL="stylesheet" TYPE="text/css" HREF="'.$STYLESHEET.'">';
+	}
+	FOREACH ($V->SCRIPTS AS $SCRIPT => $NULL) {
+		echo '<SCRIPT SRC="'.$SCRIPT.'"></SCRIPT>';
+	}

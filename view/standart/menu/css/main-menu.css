@@ -1,0 +1,25 @@
+.sky-menu ul {
+    background-color: #e4e4e4;
+}
+
+.sky-menu li {
+    list-style: none;
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+}
+
+.sky-menu li ul {
+    display: none;
+}
+
+.sky-menu li:hover ul {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.sky-menu-item-clear {
+    height: 0 !important;
+}

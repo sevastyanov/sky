@@ -1,0 +1,6 @@
+<?php if (!$V->item) return; ?>
+
+<h1><?php echo $V->item['name'] ?></h1>
+<div>
+    <?php echo $V->tinyMceText($V->item['description']); ?>
+</div>

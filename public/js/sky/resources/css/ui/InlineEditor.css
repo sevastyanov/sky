@@ -1,0 +1,14 @@
+.hm-ui-InlineEditor {
+    cursor: pointer;
+}
+
+.hm-ui-InlineEditor:hover {
+    text-decoration: underline;
+}
+
+.hm-ui-InlineEditor:focus {
+    padding: 2px 4px;
+    outline: 1px solid silver;
+    text-decoration: none;
+    cursor: text;
+}

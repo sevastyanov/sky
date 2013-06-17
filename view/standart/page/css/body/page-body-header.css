@@ -1,0 +1,19 @@
+.sky-body-header {
+    height: 100px;
+    background-color: #b4b4b4;
+}
+
+.sky-body-header-logo {
+    float: left;
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px auto;
+}
+
+.sky-body-header-right {
+    float: right;
+    height: 80px;
+    padding: 10px;
+}

@@ -1,0 +1,26 @@
+<div class="sky-menu-<?php echo $V->TYPE; ?>"><?php
+
+    $createLevel = function(&$treeLevel, $createLevel) {
+
+        echo '<ul>';
+
+        foreach ($treeLevel as &$item) {
+
+            echo '<li><a href="'.$item['path'].'">'.$item['name'].'</a>';
+
+            if (empty($item['children'])) {
+                continue;
+            }
+
+            $createLevel($item['children'], $createLevel);
+
+            echo '</li>';
+        }
+
+        echo '<li class="sky-menu-item-clear"></li></ul>';
+
+    };
+
+    $createLevel($V->MENU, $createLevel);
+
+?></div>

@@ -1,0 +1,30 @@
+.sky-menu > .sky-menu-horizontal > ul {
+    background-color: #a4a4a4;
+}
+
+.sky-menu > .sky-menu-horizontal a,
+.sky-menu > .sky-menu-horizontal a:visited,
+.sky-menu > .sky-menu-horizontal a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sky-menu-horizontal > ul > li {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.sky-menu-horizontal > ul > li:hover {
+    background-color: #b0b0b0;
+}
+
+.sky-menu-horizontal li.sky-menu-item-clear {
+    float: none;
+    clear: left;
+}
+
+.sky-menu > .sky-menu-horizontal li {
+    height: 35px;
+    line-height: 35px;
+}

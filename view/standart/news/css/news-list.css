@@ -1,0 +1,30 @@
+.sky-news-list-item {
+    padding: 10px;
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+}
+
+.sky-news-list-item-title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px dotted #a4a4a4;
+}
+
+.sky-news-list-item-title a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.sky-news-list-item-title a:hover {
+    text-decoration: underline;
+}
+
+.sky-news-list-item-date {
+    float: right;
+    margin-right: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #a4a4a4;
+    line-height: 18px;
+}

@@ -1,0 +1,10 @@
+.sky-body-footer {
+    height: 50px;
+    background-color: #949494;
+    padding: 10px;
+}
+
+.sky-body-footer-copyright {
+    float: right;
+    line-height: 50px;
+}

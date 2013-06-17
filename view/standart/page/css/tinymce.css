@@ -1,0 +1,8 @@
+.sky-tinymce-content ul {
+    list-style: circle;
+    margin-left: 35px;
+}
+
+.sky-tinymce-content p {
+    margin: 10px 0;
+}
