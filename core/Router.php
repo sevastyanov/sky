@@ -9,7 +9,7 @@ class Router extends BaseClass {
 	public function init() {
 		
 		$path = preg_replace('/\\/?(\?.*)?$/', '', $_SERVER['REQUEST_URI']);
-		
+
 		switch ($path) {
 			case '/api':
 				$this->runAPI();
@@ -27,10 +27,31 @@ class Router extends BaseClass {
 				$this->runAdminAPI();
 				break;
 			default:
-				$this->runDefault($path);
+
+                if (preg_match('/^\/temp\/autosize\/(\d+)x(\d+)_(\w+)%28(.*)%29(\/.+)(\?.*)?$/', $path, $matches)) {
+
+                    $width    = $matches[1];
+                    $height   = $matches[2];
+                    $method   = $matches[3];
+                    $params   = rawurldecode($matches[4]);
+                    $fileName = $matches[5];
+
+                    $this->runImageAutoSize($fileName, $width, $height, $method, $params);
+                } else {
+                    $this->runDefault($path);
+                }
+
 				break;
 		}
 	}
+
+    protected function runImageAutoSize($fileName, $width, $height, $method, $params) {
+
+        $imageCreator = new \core\media\ImageCreator();
+
+        $imageCreator->convertImage($fileName, $width, $height, $method, $params);
+
+    }
 	
 	protected function runAPI() {
 		define('PLATFORM', FRONTEND);

@@ -8,7 +8,9 @@ class Page_Controller_Index extends \core\Controller {
 
     protected $controllers = array();
 
-    public function init($path) {
+    public function init($params = array()) {
+
+        $path = $params;
 
         $core = $this->core;
         $bootstrap = $this->core->getBootstrap();

@@ -4,7 +4,9 @@ namespace module\standart\news\controller;
 
 class News_Controller_List extends \core\Controller {
 
-    public function init($page_one_id) {
+    public function init($params = array()) {
+
+        $page_one_id = $params;
 
         $sql = 'SELECT
                     `path`

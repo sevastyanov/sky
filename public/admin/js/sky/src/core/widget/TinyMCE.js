@@ -13,7 +13,7 @@ Ext.define('sky.core.widget.TinyMCE', {
             // General options
             theme : "advanced",
             plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist",
-
+            document_base_url : "/",
             skin: "extjs",
             inlinepopups_skin: "extjs",
 

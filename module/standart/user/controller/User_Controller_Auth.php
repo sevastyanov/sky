@@ -9,7 +9,7 @@ class User_Controller_Auth extends \core\Controller {
         return 'sky-auth-'.$id++;
     }
 
-    public function init($data) {
+    public function init($params = array()) {
 
         $userInfo = $this->core->getUser()->getInfo();
 

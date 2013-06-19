@@ -6,7 +6,7 @@ class Admin_Controller_Index extends \core\Controller {
 	
 	protected $viewClass = '\core\view\PageView';
 	
-	public function init() {
+	public function init($params = array()) {
 		
 		$head = $this->view->getHead();
 		

@@ -5,8 +5,9 @@
 
 .sky-body-header-logo {
     float: left;
-    height: 100px;
-    width: 100px;
+    height: 62px;
+    width: 131px;
+    margin-top: 15px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100px auto;

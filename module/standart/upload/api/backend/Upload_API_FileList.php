@@ -9,66 +9,34 @@ class Upload_API_FileList extends \core\API {
 
         $files = array();
 
-        $dirName = \DIR_UPLOAD;
+        $fileList = scandir(\DIR_UPLOAD);
+        $folders = array();
 
-        switch (getenv('OS')) {
-            case 'Windows_NT':
+        foreach ($fileList as $file) {
 
-                $fso = new \Com('Scripting.FileSystemObject', null, CP_UTF8);
+            if ($file === '.' || $file === '..') {
+                continue;
+            }
 
-                foreach ($fso->getFolder($dirName)->SubFolders as $file) {
-                    $files[] = array(
-                        'name' => $file->Name,
-                        'url'  => \URL_UPLOAD.'/'.$file->Name,
-                        'size' => $file->Size,
-                        'lastmod' => $file->DateLastModified,
-                        'is_dir' => true
-                    );
-                }
+            $fileName = \DIR_UPLOAD.'/'.$file;
 
-                foreach ($fso->getFolder($dirName)->Files as $file) {
-                    $files[] = array(
-                        'name' => $file->Name,
-                        'url'  => \URL_UPLOAD.'/'.$file->Name,
-                        'size' => $file->Size,
-                        'lastmod' => $file->DateLastModified,
-                        'is_dir' => false
-                    );
-                }
+            $fileData = array(
+                'name' => $file,
+                'url'  => \URL_UPLOAD.'/'.$file,
+                'size' => filesize($fileName),
+                'lastmod' => filemtime($fileName),
+                'is_dir' => is_dir($fileName)
+            );
 
-                break;
-
-            default:
-
-                $fileList = scandir(\DIR_UPLOAD);
-                $folders = array();
-
-                foreach ($fileList as $file) {
-
-                    if ($file === '.' || $file === '..') {
-                        continue;
-                    }
-
-                    $fileName = \DIR_UPLOAD.'/'.$file;
-
-                    $fileData = array(
-                        'name' => $file,
-                        'url'  => \URL_UPLOAD.'/'.$file,
-                        'size' => filesize($fileName),
-                        'lastmod' => filemtime($fileName),
-                        'is_dir' => is_dir($fileName)
-                    );
-
-                    if (!$fileData['is_dir']) {
-                        $files[] = $fileData;
-                    } else {
-                        $folders[] = $fileData;
-                    }
-                }
-
-                $files = array_merge($folders, $files);
-
+            if (!$fileData['is_dir']) {
+                $files[] = $fileData;
+            } else {
+                $folders[] = $fileData;
+            }
         }
+
+        $files = array_merge($folders, $files);
+
 
         return $files;
 

@@ -44,7 +44,7 @@ class Session extends BaseClass implements \ArrayAccess {
                 // проверяем, как давно обновляли дату последнего посещения
                 $lastVisit = new \core\DateTime($session['last_visit']);
 
-                if ($lastVisit->getTimestamp() < mktime() - 300) {
+                if ($lastVisit->getTimestamp() < time() - 300) {
                     $this->sessionEntety->command('UpdateLastVisit', $session['id']);
                 }
             }

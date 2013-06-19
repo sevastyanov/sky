@@ -13,21 +13,28 @@ class BodyView extends \core\View {
 	}
 
     public function LABEL($labelCode) {
+
+        $result = '';
+
         if (isset($this->labelsContents[$labelCode])) {
+
             $data = $this->labelsContents[$labelCode];
             $className = 'sky-'.$data['module'].' sky-'.$data['module'].'-'.$data['action'];
 
+
             if (!$data['nowrap']) {
-                echo '<div class="'.$className.'">';
+                $result .= '<div class="'.$className.'">';
             }
 
-            echo $data['content'];
+            $result .= $data['content'];
 
             if (!$data['nowrap']) {
-                echo '</div>';
+                $result .= '</div>';
             }
 
         }
+
+        return $result;
     }
 
     protected $labelsContents = array();

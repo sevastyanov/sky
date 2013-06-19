@@ -32,32 +32,20 @@ class Upload_API_Upload extends \core\API {
 
                 $success[] = $name;
 
-                $destFileName = $dirName.'/'.$name;
+                $nameParts = explode('.', $name);
 
-
-                switch (getenv('OS')) {
-                    case 'Windows_NT':
-
-                        $fso = new \Com('Scripting.FileSystemObject', null, CP_UTF8);
-
-
-                        if ($fso->FileExists($destFileName)) {
-                            continue;
-                        }
-
-                        $fso->CopyFile($tmp_name, $destFileName, false);
-
-                        break;
-
-                    default:
-
-                        if (file_exists($destFileName)) {
-                            continue;
-                        }
-
-                        copy($tmp_name, $destFileName);
-                        chmod($destFileName, 0777);
+                foreach ($nameParts as &$namePart) {
+                    $namePart = rawurlencode($namePart);
                 }
+
+                $destFileName = $dirName.'/'.str_replace('%', '_', implode('.', $nameParts));
+
+                if (file_exists($destFileName)) {
+                    continue;
+                }
+
+                copy($tmp_name, $destFileName);
+                chmod($destFileName, 0777);
             }
         }
 

@@ -4,7 +4,7 @@ namespace module\standart\news\controller;
 
 class News_Controller_One extends \core\Controller {
 
-    public function init() {
+    public function init($params = array()) {
 
         if (!$_GET['id']) {
             return;

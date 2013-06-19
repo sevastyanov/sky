@@ -6,9 +6,9 @@ class Menu_Controller_Menu extends \core\Controller {
 
     protected $tree = array();
 
-    public function init($cfg) {
+    public function init($params = array()) {
 
-        $menu_id = $cfg['id'];
+        $menu_id = $params['id'];
 
         $sql = 'SELECT
                     t.`id`, t.`parent_id`, t.`name`, t.`status`, t.`page_id`, p.`path`, p.`status` as page_status
@@ -44,7 +44,7 @@ class Menu_Controller_Menu extends \core\Controller {
             unset($item);
         }
 
-        $this->view->TYPE = $cfg['type'];
+        $this->view->TYPE = $params['type'];
         $this->view->MENU = &$tree;
         $this->view->setTemplate('menu');
 

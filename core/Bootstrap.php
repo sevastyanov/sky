@@ -7,6 +7,10 @@ class Bootstrap {
 	public function autoload($className) {
 		
 		$fileName = DIR_ROOT.'/'.str_replace('\\', '/', $className).'.php';
+
+        if (!file_exists($fileName)) {
+            return;
+        }
 		
 		$fn = function() use ($fileName) {
 			include $fileName;

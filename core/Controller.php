@@ -19,7 +19,7 @@ class Controller extends BaseClass {
 		$this->moduleName = $moduleName;
 		$this->action     = $action;
 		
-		$this->view = new $this->viewClass($this->moduleName);
+		$this->view = new $this->viewClass('/module/'.$this->moduleName);
 		
 	}
 

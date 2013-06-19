@@ -7,7 +7,7 @@ class ThemeLoader extends BaseClass {
     protected $version = '0.0.2';
     protected $files = array();
     protected $themePath = '';
-    protected $debug = false;
+    protected $debug = true;
 
     protected function loadCssList() {
 
@@ -46,7 +46,7 @@ class ThemeLoader extends BaseClass {
 
             foreach ($files as $fileName) {
 
-                $result .= "\n".file_get_contents($this->themePath.'/'.$moduleCode.'/css/'.$fileName);
+                $result .= "\n".file_get_contents($this->themePath.'/module/'.$moduleCode.'/css/'.$fileName);
 
             }
 
